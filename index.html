@@ -16,14 +16,20 @@
         
         <div class="container">
             <div class="wrapper">
+
                 <div class="left-column">
                     <div class="left-column-header">
                         <div class="header-left">
                             <img src="img/avatar_io.jpg" alt="Sofia">
                             <p class="name-avatar"><strong>Sofia</strong></p>
                         </div>
+                        <div class="icons">
+                            <a href=""><i class="fa-solid fa-circle-notch"></i></a>
+                            <a href=""><i class="fa-solid fa-message"></i></a>
+                            <a href=""><i class="fas fa-ellipsis-v"></i></a>
+                        </div>
                     </div>
-                    
+
                     <div class="notification">
                         <div class="bell">
                             <i class="fa-solid fa-bell-slash"></i>
@@ -41,11 +47,29 @@
                         <p>cerca o inizia una nuova chat</p>
                     </div>
 
-                    <div class="chats">
-
-                    </div>
+                    <ul class="chats">
+                        <li class="chat" v-for="people in contacts">
+                            <div class="image-chats">
+                                <img :src="'img/avatar' + people.avatar + '.jpg'" :alt="people.name">      
+                            </div>
+                            <div>
+                                <p class="name-avatar"><strong>{{ people.name }}</strong></p>
+                                <div class="last-message">
+                                    <p>Ultimo messaggio inviato</p>
+                                    <p class="time-last-message">12:00</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul> 
                 </div>
 
+                <div class="right-column">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet doloremque magnam eum vel et quidem corporis voluptates delectus veritatis omnis quaerat, voluptatum quia nostrum recusandae ex, vitae illo quam nulla.
+
+
+
+                    gerasgh
+                </div>
             </div>
         </div>
 
