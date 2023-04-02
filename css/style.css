@@ -168,7 +168,13 @@ img {
     margin-top: 20px;
     margin-left: 600px;
     font-size: 1.2rem;
-    justify-content: flex-end;
+    justify-content: space-between;
+}
+
+.time-message {
+    font-size: 0.6rem;
+    color: gray;
+    padding-top: 5%;
 }
 
 .right-chat-box {
@@ -177,7 +183,7 @@ img {
     background-color: rgb(255, 255, 255);
     margin-top: 20px;
     font-size: 1.2rem;
-    justify-content: flex-start;
+    justify-content: space-between;
     margin-left: 100px;
     }
 
