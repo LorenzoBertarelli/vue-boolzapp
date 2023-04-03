@@ -67,18 +67,6 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="chat" v-for="people in contacts">
-                            <div class="image-chats">
-                                <img :src="'img/avatar' + people.avatar + '.jpg'" :alt="people.name">      
-                            </div>
-                            <div>
-                                <p class="name-avatar"><strong>{{ people.name }}</strong></p>
-                                <div class="last-message">
-                                    <p>Ultimo messaggio inviato</p>
-                                    <p class="time-last-message">12:00</p>
-                                </div>
-                            </div>
-                        </li>
                     </ul> 
                 </div>
 
@@ -102,15 +90,19 @@
 
                     <div class="chat-message">
                         <div class="left-chat-box send">
-                            Hai portato a spasso il cane? 
-                            <p class="time-message">12:00</p>
+                            <div class="chat-send">
+                                Hai portato a spasso il cane? 
+                                <p class="time-message">12:00</p>
+                            </div>
                         </div>
                         <div class="left-chat-box send">
-                            Ricordati di stendere i panni
-                            <p class="time-message">12:00</p>
+                            <div class="chat-send">
+                                Ricordati di stendere i panni
+                                <p class="time-message">12:00</p>
+                            </div>    
                         </div>
                         <div class="right-chat-box recived">
-                            <p>Tutto Fatto!</p> 
+                            Tutto Fatto! 
                             <p class="time-message">12:00</p>
                         </div>
                     </div>
