@@ -8,6 +8,7 @@ createApp({
     data() {
         return{
             activeIndex: 0,
+
             contacts: [
                 {
                     name: 'Michele',
@@ -172,5 +173,12 @@ createApp({
                 }
             ]
         }
+    },
+    methods: {
+        visibleChat(peopleIndex) {
+            this.activeIndex=peopleIndex
+        }
+    
     }
 }).mount("#app");
+

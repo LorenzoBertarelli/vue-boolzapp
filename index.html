@@ -55,7 +55,7 @@
                     </div>
 
                     <ul class="chats">
-                        <li @click="change(people)" v-show="people.visible" class="chat" v-for="people in contacts">
+                        <li v-for="(people, index) in contacts" @click="visibleChat(index)" v-show="people.visible" class="chat">
                             <div class="image-chats">
                                 <img :src="'img/avatar' + people.avatar + '.jpg'" :alt="people.name">      
                             </div>
@@ -89,21 +89,11 @@
                     </div>
 
                     <div class="chat-message">
-                        <div class="left-chat-box send">
-                            <div class="chat-send">
-                                Hai portato a spasso il cane? 
+                        <div class="left-chat-box " v-for="(message, index) in contacts[activeIndex].messages">
+                            <div class="chat-send send">
+                                {{ message.message }} 
                                 <p class="time-message">12:00</p>
                             </div>
-                        </div>
-                        <div class="left-chat-box send">
-                            <div class="chat-send">
-                                Ricordati di stendere i panni
-                                <p class="time-message">12:00</p>
-                            </div>    
-                        </div>
-                        <div class="right-chat-box recived">
-                            Tutto Fatto! 
-                            <p class="time-message">12:00</p>
                         </div>
                     </div>
 
