@@ -1,8 +1,13 @@
 const { createApp } = Vue;
 
+// message in contacts
+// const dt = luxon.DateTime;
+// console.log(dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS));
+
 createApp({
     data() {
         return{
+            activeIndex: 0,
             contacts: [
                 {
                     name: 'Michele',

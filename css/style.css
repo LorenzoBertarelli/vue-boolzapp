@@ -5,8 +5,9 @@
 }
 
 body {
-    background: linear-gradient(180deg, #009688 10%, #DADBD4 10%);
+    background: linear-gradient(180deg, #009688 10vh, #DADBD4 10vh);
     height: 100vh;
+    width: 100%;
 }
 
 a {
@@ -18,12 +19,13 @@ a {
 i {
     padding: 5px;
 }
+
 .container {
     display: flex;
-    height: 100%;
     margin: auto;
     justify-content: center;
-    min-width: 800px;
+    align-items: center;
+
 }
 
 .wrapper {
@@ -32,11 +34,15 @@ i {
     height: 80vh;
     margin-top: 50px;
     display: flex;
+    min-width: 800px;
 }
+
+/* LEFT COLUMN */
 
 .left-column {
     min-width: 300px;
-    height: 100vh;
+    width: 30%;
+    height: 100%;
 }
 
 .left-column-header {
@@ -49,8 +55,9 @@ i {
     border-right: 1px solid gray;
 }
 
-.header-left {
+.header {
     display: flex;
+    align-items: center;
 }
 
 img {
@@ -99,18 +106,31 @@ img {
 }
 
 .lente {
-    margin: 0px 10px;
+    margin: 0px 5px;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50px;
+    width: 60px;
     font-size: 1.2rem;
     border-radius: 50px;
 }
 
+.serch-bar {
+    width: 100%;
+    text-align: center;
+}
+
+.serch {
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    margin-top: 5px;
+}
+
 .chats {
-    height: 100%;
-    overflow-y: auto;
+    height: calc(100% - 175px);
+    overflow-y: scroll;
 }
 
 .chat {
@@ -140,25 +160,27 @@ img {
 /* RIGHT COLUMN */
 
 .right-column {
+    display: flex;
+    flex-direction: column;
     background-image: url("../img/mine.jpg");
-    width: 100%;
-    min-width: 300px;
-    height: 80vh;
+    width: 70%;
+    min-width: 600px;
+    height: 100%;
 }
 
 .right-column-header {
-    width: 895px;
+    width: 870px;
     height: 70px;
     background-color: rgb(235, 235, 235);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: relative;
 }
 
 .chat-message {
-    position: absolute;
     width: 70%;
+    height: 100%;
+    overflow-y: auto;
 }
 
 .left-chat-box {
@@ -166,15 +188,20 @@ img {
     width: 30%;
     background-color: rgb(207, 255, 134);
     margin-top: 20px;
-    margin-left: 600px;
     font-size: 1.2rem;
     justify-content: space-between;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.left-chat-box.send {
+    justify-content: end;
 }
 
 .time-message {
     font-size: 0.6rem;
     color: gray;
-    padding-top: 5%;
+    padding-top: 2%;
 }
 
 .right-chat-box {
@@ -184,17 +211,21 @@ img {
     margin-top: 20px;
     font-size: 1.2rem;
     justify-content: space-between;
-    margin-left: 100px;
-    }
+    border-radius: 10px;
+    padding: 10px;
+}
 
-.footer-right {
-    width: 895px;
+.right-chat-box.recived {
+    justify-content: start;
+}
+
+.footer {
+    width: 870px;
     height: 70px;
     background-color: rgb(235, 235, 235);
     display: flex;
     align-items: center;
-    position: absolute;
-    bottom: 189px;
+    bottom: 170px;
 }
 
 .emoji {
