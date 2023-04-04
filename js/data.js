@@ -1,14 +1,13 @@
 const { createApp } = Vue;
 
-// message in contacts
-// const dt = luxon.DateTime;
-// console.log(dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS));
+const dt = luxon.DateTime;
+console.log(dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS));
 
 createApp({
     data() {
         return{
             activeIndex: 0,
-
+            newMessage: "",
             contacts: [
                 {
                     name: 'Michele',
@@ -177,8 +176,37 @@ createApp({
     methods: {
         visibleChat(peopleIndex) {
             this.activeIndex=peopleIndex
+        },
+        formatDate(dateStr) {
+            const myDate = dt.fromFormat(dateStr,"dd/MM/yyyy hh:mm:ss");
+            return myDate.toLocaleString(dt.TIME_24_SIMPLE);
+        },
+        addNewMessage() {
+            if(this.newMessage.length > 0) {
+                this.sendMessage();
+                const dialogIndex = this.activeIndex;
+                setTimeout(() => {
+                    this.recieveMessage(dialogIndex);
+                }, 1000);
+            }
+        },
+        sendMessage() {
+            const message = {
+                message: this.newMessage,
+                date: dt.now().toLocaleString(dt.TIME_24_SIMPLE),
+                status: `sent`
+            }
+            this.contacts[this.activeIndex].messages.push(message);
+            this.newMessage = "";            
+        },
+        recieveMessage(dialogInedx) {
+            const message = {
+                message: "OK",
+                date: this.getNowDate(),
+                status: "received"
+            };
+            contacts[dialogInedx].message,push(message);
         }
-    
-    }
+    },
 }).mount("#app");
 

@@ -204,6 +204,7 @@ img {
     font-size: 0.6rem;
     color: gray;
     padding-top: 2%;
+    text-align: end;
 }
 
 .right-chat-box {

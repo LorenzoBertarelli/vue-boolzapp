@@ -89,10 +89,12 @@
                     </div>
 
                     <div class="chat-message">
-                        <div class="left-chat-box " v-for="(message, index) in contacts[activeIndex].messages">
-                            <div class="chat-send send">
+                        <div class="left-chat-box"
+                        v-for="(message, index) in contacts[activeIndex].messages"
+                        :class="message.status">
+                            <div class="chat-send sent">
                                 {{ message.message }} 
-                                <p class="time-message">12:00</p>
+                                <p class="time-message">{{ formatDate(message.date) }}</p>
                             </div>
                         </div>
                     </div>
@@ -105,7 +107,9 @@
                         </div>
 
                         <div class="write-message">
-                            <input name="mioTesto" type="text" placeholder="Scrivi un messaggio" size="90" class="message"/>
+                            <input v-model.trim="newMessage" 
+                            @keyup.enter="addNewMessage()" 
+                            name="mioTesto" type="text" placeholder="Scrivi un messaggio" size="90" class="message"/>
                         </div>
                         
                         <div class="mic">
